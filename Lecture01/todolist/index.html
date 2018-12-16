@@ -1,0 +1,27 @@
+<html>
+
+<body>
+  <h1> This is a html page </h1>
+  <input id="i1">
+  <button id="b1"> HELLO </button>
+
+  <script>
+    // window.alert('Hello World')
+    setTimeout(() => {
+      let para = document.createElement('p')
+      para.innerText = "this is a paragraph"
+      document.body.appendChild(para)
+    }, 2000)
+
+    let b1 = document.getElementById('b1')
+    let i1 = document.getElementById('i1')
+    console.log(b1)
+    b1.onclick = function () {
+      window.alert('Hello ' + i1.value)
+    }
+
+
+  </script>
+</body>
+
+</html>
