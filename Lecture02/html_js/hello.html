@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+  <h1>this page says hello</h1>
+
+  <input id="name">
+  <input id="greeting">
+  <button id="hello">Say Hello</button>
+
+  <script>
+    let hello = document.getElementById('hello')
+    let name = document.getElementById('name')
+    let greeting = document.getElementById('greeting')
+
+    hello.onclick = function () {
+      if (greeting.value == "") {
+        window.alert('Hello ' + name.value)
+      } else {
+        window.alert(greeting.value + ' ' + name.value)
+      }
+
+    }
+  </script>
+</body>
+
+</html>
