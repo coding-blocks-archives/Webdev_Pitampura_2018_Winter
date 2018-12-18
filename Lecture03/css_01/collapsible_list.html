@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  li ul {
+    visibility: hidden;
+    height: 0;
+  }
+  li:hover > ul {
+    visibility: visible;
+    height: auto;
+  }
+</style>
+<body>
+<ul>
+  <li>one
+    <ul>
+      <li> one point one
+        <ul>
+          <li>one one one</li>
+          <li>one one two</li>
+        </ul>
+      </li>
+      <li>one point two</li>
+    </ul>
+  </li>
+  <li>two
+    <ul>
+      <li>two point one</li>
+      <li>two point two
+        <ul>
+          <li>two one one</li>
+          <li>two one two</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>three</li>
+</ul>
+</body>
+</html>
