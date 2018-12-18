@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* ul, ol {
+      color: red
+    } */
+
+    /* child */
+    div > div {
+      color: blue;
+    }
+    /* descendant */
+    div li {
+      color: red
+    }
+
+    div + p {
+      font-weight: bold;
+    }
+    div ~ p {
+      font-family: Courier;
+    }
+  </style>
+</head>
+
+<body>
+  <p>first para</p>
+  <div> div 1 </div>
+  <div>
+    div 2
+    <div>div 2 . 1</div>
+    <div>div 2 . 2</div>
+  </div>
+  <div> div 3
+    <ul>
+      <li> item 1
+        <ul>
+          <li>item 1.1</li>
+        </ul>
+
+      </li>
+      <li> item 2</li>
+    </ul>
+  </div>
+  <div> div 4
+    <ol>
+      <li> item 1</li>
+      <li> item 2</li>
+    </ol>
+  </div>
+  <div> div 5
+    <div> div 5.1
+      <div> div 5.1.1
+        <div> div 5.1.1.1 </div>
+      </div>
+    </div>
+  </div>
+  <p>
+    this is para
+  </p>
+  <h1>heading 1</h1>
+  <p>another para</p>
+
+</body>
+
+</html>
