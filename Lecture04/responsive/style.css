@@ -1,0 +1,21 @@
+#d1 {
+  height: 100px;
+  width: 200px;
+  transition: 0.2s;
+  background-color: blue;
+}
+
+
+@media screen and (max-width: 800px) {
+
+  #d1 {
+    transition: 0.2s;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+
+  #d1 {
+    width: 80px;
+  }
+}
