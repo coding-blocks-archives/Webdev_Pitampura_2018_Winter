@@ -5,8 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    #gamebox {
+      background-color: lightskyblue;
+      height: 600px;
+      width: 600px;
+      margin: 50px;
+    }
+    .obstacle {
+      display: inline-block;
+      background-color: maroon;
+      height: 50px;
+      width: 50px;
+      margin-left: 150px;
+      animation: updown 2s infinite;
+    }
+
+    .obs-two {
+      animation-duration: 3s;
+    }
+
+    @keyframes updown {
+      0% {}
+      50%{
+        transform: translateY(550px)
+      }
+      100% {}
+    }
+
+    .player {
+      display: inline-block;
+      background-color: royalblue;
+      height: 50px;
+      width: 50px;
+      transform: translateY(275px);
+      animation: leftright linear 4s infinite;
+      animation-play-state: paused
+    }
+
+    @keyframes leftright {
+      50% {
+        transform: translate(550px, 275px);
+      }
+    }
+
+    #gamebox:active > .player {
+      animation-play-state: running;
+    }
+  </style>
 </head>
 <body>
+
+  <div id="gamebox">
+    <div class="player"></div>
+    <div class="obstacle obs-one"></div>
+    <div class="obstacle obs-two"></div>
+  </div>
 
 </body>
 </html>
