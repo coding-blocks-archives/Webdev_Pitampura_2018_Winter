@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul h1 {
+  position: sticky;
+  top: 0px;
+  background-color: bisque;
+  margin: 0;
+
+}
+li {
+  font-size: 1.5rem;
+}
