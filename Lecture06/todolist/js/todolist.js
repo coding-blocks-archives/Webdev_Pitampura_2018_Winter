@@ -8,10 +8,15 @@ window.onload = function () {
     let newTaskValue = newtask.value
     let newTaskListItem = document.createElement('li')
 
-    newTaskListItem.innerText = newTaskValue
-    newTaskListItem.className = "list-group-item"
+    tasklist.innerHTML +=
+    '<li class="list-group-item">' +
+      newTaskValue
+     +'</li>'
 
-    tasklist.appendChild(newTaskListItem)
+    // newTaskListItem.innerText = newTaskValue
+    // newTaskListItem.className = "list-group-item"
+
+    // tasklist.appendChild(newTaskListItem)
   }
 
 
