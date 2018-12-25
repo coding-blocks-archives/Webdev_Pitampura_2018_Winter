@@ -7,11 +7,12 @@ window.onload = function () {
   printBtn.onclick = function () {
     let start = new Date().getTime()
 
-    numList.innerHTML = ""
     let N = parseInt(sizeInp.value)
 
     for (let i = 1; i <= N; i++) {
-      numList.innerHTML += "<li> " + i + "</li>"
+      let newItem = document.createElement('li')
+      newItem.innerText = i
+      numList.appendChild(newItem)
     }
 
     console.log(new Date().getTime() - start)
