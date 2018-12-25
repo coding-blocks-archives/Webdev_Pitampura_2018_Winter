@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/todolist.css">
+
+
+  <script src="js/jquery-3.3.1.slim.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script async defer src="js/todolist.js"></script>
+
+</head>
+<body>
+<h1 class="text-center my-4">Todo List</h1>
+<div class="container">
+  <div class="row">
+    <input
+      id="newtask"
+      placeholder="Write new task here"
+      type="text"
+      class="form-control col mx-2">
+    <button
+      id="addbtn"
+      class="btn btn-success col-4 mx-2">
+      Add Task
+    </button>
+  </div>
+  <div class="row">
+    <ul id="tasklist" class="list-group col mx-4 my-2">
+
+
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
