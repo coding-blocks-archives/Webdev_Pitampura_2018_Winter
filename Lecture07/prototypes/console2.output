@@ -1,0 +1,48 @@
+c.__proto__ == b
+true
+c.__proto__.__proto__ == a
+true
+c.__proto__.__proto__.__proto__ == Object.prototype
+true
+c.__proto__.__proto__.__proto__.__proto__
+null
+let n = 10
+10
+n.__proto__ == Number.prototype
+true
+n.__proto__.__proto__ == Object.prototype
+true
+n.__proto__.__proto__.__proto__
+null
+("asds").__proto__.__proto__.__proto__
+null
+(false).__proto__.__proto__.__proto__
+null
+(false).__proto__.__proto__.__proto__.__proto__
+TypeError: false.__proto__.__proto__.__proto__ is null[Learn More] debugger eval code:1:2
+function hello () {console.log("hello")}
+undefined
+let h = hello
+function hello()
+h()
+hello debugger eval code:1:20
+undefined
+hello.__proto__
+function ()
+hello.__proto__ == Function.prototype
+true
+hello.__proto__.__proto__
+Object { … }
+hello.__proto__.__proto__.__proto__
+null
+([1,2]).__proto__
+Array []
+([1,2]).__proto__.__proto__
+Object { … }
+([1,2]).__proto__.__proto__.__proto__
+null
+let p = null
+null
+p.__proto__
+TypeError: p is null[Learn More] debugger eval code:1:1
+typeof p

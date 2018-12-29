@@ -1,0 +1,10 @@
+let n = 10
+10
+n.__proto__
+Number { 0 }
+n.__proto__ == Number.prototype
+true
+"ASdasdas".__proto__ == String.prototype
+true
+(false).__proto__ == Boolean.prototype
+true
