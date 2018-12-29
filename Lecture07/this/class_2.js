@@ -2,11 +2,14 @@ class Vehicle {
   constructor(wheels, color) {
     this.wheels = wheels
     this.color = color
-
   }
 
-  getAxles() {
+  get axles() {
     return this.wheels / 2
+  }
+
+  set axles(val) {
+    this.wheels = val * 2
   }
 }
 
