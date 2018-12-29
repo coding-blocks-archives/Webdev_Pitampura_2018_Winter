@@ -1,21 +1,20 @@
-
 window.onload = function () {
   let tasklist = document.getElementById('tasklist')
   let newtask = document.getElementById('newtask')
   let addbtn = document.getElementById('addbtn')
 
-  function addNewTask () {
+  function addNewTask() {
     let newTaskValue = newtask.value
     let newTaskListItem = document.createElement('li')
 
     newTaskListItem.innerText = newTaskValue
     newTaskListItem.className = "list-group-item"
-    newTaskListItem.onclick = function (e) {
-      console.log('hello')
-      if (e.target.className.indexOf('disabled') === -1) {
-        e.target.className = 'list-group-item disabled'
+
+    newTaskListItem.onclick = function (ev) {
+      if (ev.target.className.indexOf('done') === -1) {
+        ev.target.className = 'list-group-item done'
       } else {
-        e.target.className = 'list-group-item'
+        ev.target.className = 'list-group-item'
       }
     }
 
