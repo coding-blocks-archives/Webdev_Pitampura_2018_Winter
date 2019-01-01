@@ -23,12 +23,20 @@ window.onload = function () {
       let span = document.createElement('span')
       span.innerText = task.name
       span.className = "col py-1"
+
       let liBtnDone = document.createElement('button')
       liBtnDone.innerText = task.done ? "❌" : "✔️"
       liBtnDone.className = "btn btn-info col-2 mx-2"
       let liBtnDelete = document.createElement('button')
       liBtnDelete.innerText = "DELETE"
       liBtnDelete.className = "btn btn-danger col-2 mx-2"
+
+      let liBtnUp = document.createElement('button')
+      liBtnUp.innerText = "⬆️"
+      liBtnUp.className = "btn btn-warning col-1 mx-2"
+      let liBtnDown = document.createElement('button')
+      liBtnDown.innerText = "⬇️"
+      liBtnDown.className = "btn btn-warning col-1 mx-2"
 
       liBtnDone.onclick = function () {
         task.done = !task.done
@@ -40,6 +48,8 @@ window.onload = function () {
       }
 
       div.appendChild(span)
+      div.appendChild(liBtnUp)
+      div.appendChild(liBtnDown)
       div.appendChild(liBtnDone)
       div.appendChild(liBtnDelete)
 
