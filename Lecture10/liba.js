@@ -1,6 +1,5 @@
-const libb = require('./libb')
-
 module.exports = {
   alpha: 1111,
-  libb
 }
+
+module.exports.libb = require('./libb')
