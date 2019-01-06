@@ -6,7 +6,7 @@
 
 process.stdin.on('data', (data) => {
   console.log(data.toString())
-  if (data.toString() == "exit\n") {
+  if (data.toString().startsWith("exit")) {
     console.log('exiting')
     // process.stdin.removesAllListeners()
     process.exit()
@@ -15,6 +15,10 @@ process.stdin.on('data', (data) => {
 
 
 
-while(true) {
+// while(true) {
 
-}
+// }
+
+
+let str = "hello " + name
+let str2 = `hello ${name}`
