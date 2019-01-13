@@ -1,7 +1,44 @@
 const express = require('express')
+const path = require('path')
+const fs = require('fs')
 const app = express()
 
+let DATA_FILE = path.join(__dirname, 'tasks.json')
+
 let tasks = []
+
+fs.readFile(DATA_FILE, (err, data) => {
+  if (!err) {
+    tasks = JSON.parse(data.toString())
+  }
+})
+
+function addTask(task, done) {
+  tasks.push(task)
+  fs.writeFile(
+    DATA_FILE,
+    JSON.stringify(tasks),
+    (err) => {
+      if (!err) {
+        done(tasks.length - 1)
+      }
+    }
+  )
+}
+
+function writeTaskList(done) {
+  fs.writeFile(
+    DATA_FILE,
+    JSON.stringify(tasks),
+    (err) => {
+      if (!err) {
+        done()
+      }
+    }
+  )
+}
+
+
 app.use(express.urlencoded({
   extended: true
 }))
@@ -15,12 +52,22 @@ app.post('/tasks', (req, res) => {
   if (typeof req.body.done === 'string') {
     req.body.done = (req.body.done == 'true')
   }
-  console.log(req.body)
-  tasks.push(req.body)
-  res.status(201).send({
-    success: true,
-    id: tasks.length - 1
-  })
+  if (req.body.name && req.body.name.trim().length > 0) {
+    console.log(req.body)
+    addTask(req.body, (taskId) => {
+      res.status(201).send({
+        success: true,
+        id: tasks.length - 1
+      })
+    })
+
+  } else {
+    res.status(400).send({
+      success: false,
+      message: 'Task name cannot be empty'
+    })
+  }
+
 })
 
 app.get('/tasks/:id', (req, res) => {
@@ -43,11 +90,17 @@ app.patch('/tasks/:id', (req, res) => {
     tasks[taskId].name = req.body.name
   }
   tasks[taskId].done = req.body.done
-  res.status(202).send({
-    success: true
+  writeTaskList(() => {
+    res.status(202).send({
+      success: true
+    })
   })
+
 })
 
+app.use('/', express.static(
+  path.join(__dirname, 'public_html')
+))
 
 app.listen(4567, () => {
   console.log("Started on http://localhost:4567")
