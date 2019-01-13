@@ -14,6 +14,7 @@ app.set('view engine', 'hbs')
 app.get('/tasks', (req, res) => {
   // res.send(tasks.getTasks())
   res.render('tasks', {
+    title: 'Task List',
     tasks: tasks.getTasks()
   })
 })
