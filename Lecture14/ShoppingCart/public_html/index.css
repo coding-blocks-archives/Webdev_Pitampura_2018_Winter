@@ -1,0 +1,10 @@
+.productDiv {
+    border: 1px solid black;
+    width: 200px;
+    padding: 15px;
+    margin: 15px;
+}
+
+p {
+    width: 200px;
+}
