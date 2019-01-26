@@ -10,6 +10,8 @@ const db = new Sequelize({
 const Tasks = db.define('tasks', {
   name: Sequelize.STRING,
   done: Sequelize.BOOLEAN
+}, {
+  timestamps: false
 })
 
 db.sync()
