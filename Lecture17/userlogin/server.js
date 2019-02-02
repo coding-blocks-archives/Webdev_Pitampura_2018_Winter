@@ -4,6 +4,7 @@ const {
   db,
   Users
 } = require('./models')
+const passport = require('./passport')
 
 const app = express()
 
@@ -19,6 +20,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.get('/login', (req, res) => res.render('login'))
 app.get('/signup', (req, res) => res.render('signup'))
@@ -39,8 +43,17 @@ app.post('/signup', async (req, res) => {
 
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', passport.authenticate('local', {
+  failureRedirect: '/login',
+  successRedirect: '/profile',
+}))
 
+app.get('/profile', (req, res) => {
+  if (req.user) {
+    res.render('profile', {user: req.user})
+  } else {
+    res.redirect('/login')
+  }
 })
 
 db.sync()
