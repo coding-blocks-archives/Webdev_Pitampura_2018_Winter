@@ -13,29 +13,33 @@ app.use(session({
 }))
 
 app.use((req, res, next) => {
+  req.session.page1 = req.session.page1 || 0
+  req.session.page2 = req.session.page2 || 0
+  req.session.page3 = req.session.page3 || 0
   console.log(req.session)
   next()
 })
 
 app.get('/page1', (req, res) => {
+  req.session.page1++
   res.send('Welcome ' +
-    (req.session.page1 ? 'back ' : '') +
+    (req.session.page1 > 1 ? 'back ' : '') +
     'to page 1')
-  req.session.page1 = 'true'
 })
 
 app.get('/page2', (req, res) => {
+  req.session.page2++
   res.send('Welcome ' +
-    (req.session.page1 ? 'back ' : '') +
+    (req.session.page2 > 1 ? 'back ' : '') +
     'to page 2')
-  req.session.page2 = 'true'
 })
 
 app.get('/page3', (req, res) => {
+  req.session.page3++
   res.send('Welcome ' +
-    (req.session.page1 ? 'back ' : '') +
+    (req.session.page3 > 1 ? 'back ' : '') +
     'to page 3')
-  req.session.page3 = true
+
 })
 
 app.listen(8888)
